@@ -24,4 +24,34 @@ describe('CardComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should shows low temperatures', () => {
+    component.temperature = 3;
+
+    fixture.detectChanges();
+
+    const element = fixture.debugElement.query(By.css('.low-temperature')).nativeElement;
+
+    expect(element).toBeTruthy();
+  });
+
+  it('should shows high temperatures', () => {
+    component.temperature = 30;
+
+    fixture.detectChanges();
+
+    const element = fixture.debugElement.query(By.css('.high-temperature')).nativeElement;
+
+    expect(element).toBeTruthy();
+  });
+
+  it('should shows loading state', () => {
+    component.loading = true;
+
+    fixture.detectChanges();
+
+    const element = fixture.debugElement.query(By.css('.loading')).nativeElement;
+
+    expect(element).toBeTruthy();
+  });
 });

@@ -5,7 +5,10 @@
     <h2>{{ title }}</h2>
   </header>
   <div class="card__content">
-    <p>{{ temperature }}<small>&deg;</small></p>
+    <p [ngClass]="temperatureColor">
+      {{ temperature }}
+      <small>&deg;</small>
+    </p>
   </div>
   <footer class="card__footer">
     <ng-content></ng-content>

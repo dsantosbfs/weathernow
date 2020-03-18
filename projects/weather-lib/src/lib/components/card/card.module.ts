@@ -14,4 +14,4 @@ import { CardComponent } from './card.component';
     CardComponent
   ]
 })
-export class CardModule { }
+export class CardModule {}

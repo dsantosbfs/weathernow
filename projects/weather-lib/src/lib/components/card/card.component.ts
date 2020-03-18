@@ -9,4 +9,14 @@ export class CardComponent {
   @Input() loading = false;
   @Input() temperature: number;
   @Input() title: string;
+
+  get temperatureColor(): string {
+    if (this.temperature > 25) {
+      return 'high-temperature';
+    }
+
+    if (this.temperature < 5) {
+      return 'low-temperature';
+    }
+  }
 }
