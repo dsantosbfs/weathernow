@@ -1,0 +1,37 @@
+@import '../../shared/scss/main';
+
+.card {
+  width: 100%;
+  min-width: 200px;
+  border-radius: $wn--border-radius;
+  text-align: center;
+  box-shadow: $wn--shadow-10;
+
+  &__content {
+
+    p {
+      position: relative;
+      margin: 0;
+      color: $wn--color-yellow;
+      font-size: 90px;
+      font-weight: bold;
+
+      small {
+        position: absolute;
+        top: 10px;
+        font-size: 40px;
+      }
+    }
+  }
+
+  &__footer {
+    background-color: $wn--color-grey-opacity-50;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px solid $wn--color-grey-30;
+  }
+}

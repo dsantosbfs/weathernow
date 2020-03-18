@@ -1,0 +1,13 @@
+<section
+  class="card"
+  [ngClass]="[(loading ? 'loading': '')]">
+  <header class="card__header">
+    <h2>{{ title }}</h2>
+  </header>
+  <div class="card__content">
+    <p>{{ temperature }}<small>&deg;</small></p>
+  </div>
+  <footer class="card__footer">
+    <ng-content></ng-content>
+  </footer>
+</section>
