@@ -8,14 +8,28 @@
 
   &.loading {
 
-    .card__content {
-      background-image: url('/assets/images/loaders/loader.svg');
-      background-repeat: no-repeat;
-      background-position: center;
+    .card {
 
-      p {
+      &__content {
+        background-image: url('/assets/images/loaders/loader.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+
+        p {
+          opacity: 0;
+        }
+      }
+
+      &__footer {
         opacity: 0;
       }
+    }
+  }
+
+  &.error {
+
+    .card__footer {
+      opacity: 0;
     }
   }
 
@@ -33,6 +47,7 @@
       font-size: 90px;
       font-weight: bold;
       opacity: 1;
+      will-change: opacity;
 
       &.high-temperature {
         color: $wn--color-red;
@@ -51,9 +66,22 @@
     }
   }
 
+  &__error {
+    text-align: center;
+
+    p {
+      margin-bottom: 15px;
+      color: $wn--color-red;
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+
   &__footer {
     padding: 10px;
+    transition: opacity .2s;
     background-color: $wn--color-grey-opacity-50;
+    will-change: opacity;
   }
 
   &__header {

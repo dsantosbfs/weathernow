@@ -8,9 +8,11 @@ $wn--color-grey-50: #737c84;
 
 $wn--color-grey-opacity-50: rgba($wn--color-grey-20, 0.5);
 
+$wn--color-black: #000000;
 $wn--color-blue: #69a3ff;
-$wn--color-yellow: #ff9632;
 $wn--color-red: #ed1946;
+$wn--color-white: #ffffff;
+$wn--color-yellow: #ff9632;
 
 /* SHADOWS */
 
@@ -19,3 +21,4 @@ $wn--shadow-10: 0 0 10px 0 rgba(51, 51, 51, 0.1);
 /* BORDER RADIUS */
 
 $wn--border-radius: 4px;
+$wn--border-radius-big: 15px;

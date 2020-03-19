@@ -14,4 +14,4 @@ import { ButtonComponent } from './button.component';
     ButtonComponent
   ]
 })
-export class DataLabelModule {}
+export class ButtonModule {}
