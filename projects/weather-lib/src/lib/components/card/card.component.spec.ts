@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
+import { ButtonComponent } from './../button/button.component';
 import { CardComponent } from './card.component';
 
 describe('CardComponent', () => {
@@ -9,7 +10,10 @@ describe('CardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CardComponent ]
+      declarations: [
+        ButtonComponent,
+        CardComponent
+      ]
     })
     .compileComponents();
   }));
