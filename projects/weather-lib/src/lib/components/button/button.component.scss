@@ -1,0 +1,20 @@
+@import '../../shared/scss/main';
+
+.btn {
+  height: 30px;
+  padding: 0 15px;
+  transition: background-color .5s;
+  border: 2px solid $wn--color-grey-50;
+  border-radius: 15px;
+  background-color: transparent;
+  color: $wn--color-grey-50;
+
+  &:hover {
+    background-color: $wn--color-grey-30;
+  }
+
+  &[disabled] {
+    border-color: $wn--color-grey-40;
+    background-color: $wn--color-grey-40;
+  }
+}
