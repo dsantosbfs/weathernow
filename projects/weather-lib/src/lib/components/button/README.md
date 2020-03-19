@@ -3,15 +3,20 @@
 ## Parameters
 | Name          | Type                            |
 |---------------|---------------------------------|
-| label         | any                             |
-| title         | string                          |
+| disabled      | boolean                         |
+| label*        | string                          |
+| type          | string [button\*\*, submit]     |
 
+\* *Parâmetros obrigatórios*
+
+\*\* *Valores default*
 
 ## Example default
 ~~~~
 <lib-button
+  disabled="false"
   label="Card title"
-  data="10"
+  type="button"
 >
 </lib-button>
 ~~~~
