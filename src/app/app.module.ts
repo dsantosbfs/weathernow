@@ -2,13 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { CardModule, ButtonModule, DataLabelModule } from 'weather-lib';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ButtonModule,
+    CardModule,
+    DataLabelModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

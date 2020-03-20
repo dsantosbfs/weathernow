@@ -1,0 +1,51 @@
+@import '../../projects/weather-lib/src/lib/shared/scss/main';
+
+body {
+  background-color: $wn--color-grey-20;
+  box-sizing: border-box;
+}
+
+.page {
+
+  &__header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60px;
+    background: $wn--color-white;
+    box-shadow: $wn--shadow-10;
+
+    h1 {
+      width: 180px;
+      height: 40px;
+      background-image: url('/assets/images/logo.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 180px 40px;
+      text-indent: -9999px;
+    }
+  }
+
+  &__container {
+    padding: 20px;
+  }
+
+  .grid-container {
+    display: grid;
+    align-items: center;
+    max-width: 900px;
+    height: 95vh;
+    margin: 0 auto;
+    grid-column-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-rows: auto;
+    grid-gap: 50px;
+    justify-items: stretch;
+    grid-auto-flow: row;
+  }
+}
