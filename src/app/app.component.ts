@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-component',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'weather-now';
+  @Input() nairobi$;
+  @Input() nuuk$;
+  @Input() urubici$;
 }

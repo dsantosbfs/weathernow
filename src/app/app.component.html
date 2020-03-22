@@ -6,17 +6,26 @@
     <div class="grid-container">
       <div>
         <lib-card
-          title="Teste">
+          title="Nuuk, GL"
+          [loading]="nuuk$?.loading"
+          [temperature]="nuuk$?.data?.temp"
+        >
         </lib-card>
       </div>
       <div>
         <lib-card
-          title="Teste">
+          title="Urubici, BR"
+          [loading]="urubici$?.loading"
+          [temperature]="urubici$?.data?.temp"
+        >
         </lib-card>
       </div>
       <div>
         <lib-card
-          title="Teste">
+          title="Nairobi, KE"
+          [loading]="nairobi$?.loading"
+          [temperature]="nairobi$?.data?.temp"
+        >
         </lib-card>
       </div>
     </div>
