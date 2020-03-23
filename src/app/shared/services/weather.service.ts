@@ -13,8 +13,9 @@ export class WeatherService extends BaseService {
 
   public temperatureTransform(data) {
     return {
-        ...data,
-        temp: parseInt(data.temp, 10),
+      ...data,
+      temp: parseInt(data.temp, 10),
+      updated_at: new Date().getTime(),
     };
   }
 

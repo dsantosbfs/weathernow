@@ -9,8 +9,7 @@ import {
 export const initialState = {
   data: null,
   error: null,
-  loading: false,
-  updated_at: null,
+  loading: false
 };
 
 export const reducer = createReducer(
@@ -21,12 +20,10 @@ export const reducer = createReducer(
   })),
   on(NairobiSuccess, (state, payload) => ({
     ...initialState,
-    data: payload,
-    updated_at: new Date().getTime(),
+    data: payload
   })),
   on(NairobiFailure, (state, payload) => ({
     ...initialState,
-    error: payload,
-    updated_at: new Date().getTime(),
+    error: payload
   }))
 );

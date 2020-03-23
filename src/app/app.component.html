@@ -10,7 +10,7 @@
           [loading]="nuuk$?.loading"
           [temperature]="nuuk$?.data?.temp"
         >
-          <p>Updated at {{ getFormatedTime(nuuk$.updated_at) }} </p>
+          <p>Updated at {{ getFormatedTime(nuuk$.data.updated_at) }} </p>
         </lib-card>
       </div>
       <div>
@@ -29,7 +29,7 @@
               label="Pressure">
             </lib-data-label>
           </div>
-          <p>Updated at {{ getFormatedTime(urubici$.updated_at) }} </p>
+          <p>Updated at {{ getFormatedTime(urubici$.data.updated_at) }} </p>
         </lib-card>
       </div>
       <div>
@@ -38,7 +38,7 @@
           [loading]="nairobi$?.loading"
           [temperature]="nairobi$?.data?.temp"
         >
-          <p>Updated at {{ getFormatedTime(nairobi$.updated_at) }} </p>
+          <p>Updated at {{ getFormatedTime(nairobi$.data.updated_at) }} </p>
         </lib-card>
       </div>
     </div>
