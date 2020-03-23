@@ -24,6 +24,31 @@ describe('BaseService', () => {
     expect(service).toBeTruthy();
   }));
 
+  it('should make a GET success request without query parameters',
+    async(
+      inject([
+        HttpTestingController,
+        BaseService
+      ],
+      (httpMock: HttpTestingController, service: BaseService) => {
+        const mockResponse = {
+          status: 200,
+          statusText: 'Ok',
+          ok: true,
+        };
+
+        service.get('/test').subscribe(data => {
+          expect(data).toBe(mockResponse);
+        });
+
+        const requestMock = httpMock.expectOne({
+          url: `${baseUrl}/test?appid=d1398fc9fadc143c7dc78f13d8d0914b`,
+          method: 'GET'
+        });
+
+        requestMock.flush(mockResponse);
+  })));
+
   it('should make a GET success request',
     async(
       inject([

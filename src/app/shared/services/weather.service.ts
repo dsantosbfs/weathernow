@@ -20,7 +20,7 @@ export class WeatherService extends BaseService {
 
   public getNuukWeather(): Observable<any> {
     return this.get(`${this.url()}`, {
-      q: 'Nairobi,KE',
+      q: 'Nuuk,GL',
       units: 'metric'
     }).pipe(
       map(data => this.temperatureTransform(data.main))

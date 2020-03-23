@@ -48,6 +48,6 @@ import { metaReducers, reducers } from './shared/store/reducers';
   providers: [
     WeatherService
   ],
-  bootstrap: [AppContainer]
+  bootstrap: [AppContainerComponent]
 })
 export class AppModule { }
