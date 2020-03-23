@@ -15,7 +15,13 @@ describe('UrubiciActions', () => {
 
   it('should create UrubiciSuccess action', () => {
     const payload = {
-      test: true,
+      temp: 0,
+      feels_like: 0,
+      temp_min: 0,
+      temp_max: 0,
+      pressure: 0,
+      humidity: 0,
+      updated_at: 0,
     };
     const action = UrubiciSuccess(payload);
 
