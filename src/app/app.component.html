@@ -7,8 +7,9 @@
       <div class="nuuk">
         <lib-card
           title="Nuuk, GL"
-          [loading]="nuuk$?.loading"
-          [temperature]="nuuk$?.data?.temp"
+          [loading]="nuuk$.loading"
+          [temperature]="nuuk$.data.temp"
+          [error]="nuuk$.error"
         >
           <p>Updated at {{ getFormatedTime(nuuk$.data.updated_at) }} </p>
         </lib-card>
@@ -16,8 +17,9 @@
       <div class="urubici">
         <lib-card
           title="Urubici, BR"
-          [loading]="urubici$?.loading"
-          [temperature]="urubici$?.data?.temp"
+          [loading]="urubici$.loading"
+          [temperature]="urubici$.data.temp"
+          [error]="urubici$.error"
         >
           <div>
             <lib-data-label
@@ -35,8 +37,9 @@
       <div class="nairobi">
         <lib-card
           title="Nairobi, KE"
-          [loading]="nairobi$?.loading"
-          [temperature]="nairobi$?.data?.temp"
+          [loading]="nairobi$.loading"
+          [temperature]="nairobi$.data.temp"
+          [error]="nairobi$.error"
         >
           <p>Updated at {{ getFormatedTime(nairobi$.data.updated_at) }} </p>
         </lib-card>

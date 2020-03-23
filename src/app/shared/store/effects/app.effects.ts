@@ -1,13 +1,14 @@
 import { Effect, Actions, ofType } from '@ngrx/effects';
 import { Injectable } from '@angular/core';
-import { map, switchMap } from 'rxjs/operators';
+import { map, switchMap, catchError } from 'rxjs/operators';
 
 import { WeatherService } from './../../services/weather.service';
 
 import { WeatherLoad } from '../actions/weather.actions';
-import { NuukRequest, NuukSuccess } from './../actions/nuuk.actions';
-import { UrubiciRequest, UrubiciSuccess } from './../actions/urubici.actions';
-import { NairobiRequest, NairobiSuccess } from './../actions/nairobi.actions';
+import { NuukRequest, NuukSuccess, NuukFailure } from './../actions/nuuk.actions';
+import { UrubiciRequest, UrubiciSuccess, UrubiciFailure } from './../actions/urubici.actions';
+import { NairobiRequest, NairobiSuccess, NairobiFailure } from './../actions/nairobi.actions';
+import { of } from 'rxjs';
 
 @Injectable()
 export class AppEffects {
@@ -30,6 +31,7 @@ export class AppEffects {
     ofType(NuukRequest),
     switchMap(() => this.service.getNuukWeather().pipe(
       map(payload => NuukSuccess(payload)),
+      catchError(data => of(NuukFailure(data)))
     ))
   );
 
@@ -37,6 +39,7 @@ export class AppEffects {
     ofType(UrubiciRequest),
     switchMap(() => this.service.getUrubiciWeather().pipe(
       map(payload => UrubiciSuccess(payload)),
+      catchError(data => of(UrubiciFailure(data)))
     ))
   );
 
@@ -44,6 +47,7 @@ export class AppEffects {
     ofType(NairobiRequest),
     switchMap(() => this.service.getNairobiWeather().pipe(
       map(payload => NairobiSuccess(payload)),
+      catchError(data => of(NairobiFailure(data)))
     ))
   );
 }
