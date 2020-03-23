@@ -18,6 +18,14 @@
           [loading]="urubici$?.loading"
           [temperature]="urubici$?.data?.temp"
         >
+          <lib-data-label
+            [data]="urubici$?.data?.humidity"
+            label="Humidity">
+          </lib-data-label>
+          <lib-data-label
+            [data]="urubici$?.data?.pressure"
+            label="Pressure">
+          </lib-data-label>
         </lib-card>
       </div>
       <div>
