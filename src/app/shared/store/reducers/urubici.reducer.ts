@@ -10,6 +10,7 @@ export const initialState = {
   data: null,
   error: null,
   loading: false,
+  updated_at: null,
 };
 
 export const reducer = createReducer(
@@ -21,9 +22,11 @@ export const reducer = createReducer(
   on(UrubiciSuccess, (state, payload) => ({
     ...initialState,
     data: payload,
+    updated_at: new Date().getTime(),
   })),
   on(UrubiciFailure, (state, payload) => ({
     ...initialState,
     error: payload,
+    updated_at: new Date().getTime(),
   }))
 );
