@@ -3,6 +3,7 @@ import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { BaseService } from './base.service';
+import { WeatherInterface } from '../interfaces/weather-state.interface';
 
 @Injectable()
 export class WeatherService extends BaseService {
@@ -19,7 +20,7 @@ export class WeatherService extends BaseService {
     };
   }
 
-  public getNuukWeather(): Observable<any> {
+  public getNuukWeather(): Observable<WeatherInterface> {
     return this.get(`${this.url()}`, {
       q: 'Nuuk,GL',
       units: 'metric'
@@ -28,7 +29,7 @@ export class WeatherService extends BaseService {
     );
   }
 
-  public getUrubiciWeather(): Observable<any> {
+  public getUrubiciWeather(): Observable<WeatherInterface> {
     return this.get(`${this.url()}`, {
       q: 'Urubici,BR',
       units: 'metric'
@@ -37,7 +38,7 @@ export class WeatherService extends BaseService {
     );
   }
 
-  public getNairobiWeather(): Observable<any> {
+  public getNairobiWeather(): Observable<WeatherInterface> {
     return this.get(`${this.url()}`, {
       q: 'Nairobi,KE',
       units: 'metric'

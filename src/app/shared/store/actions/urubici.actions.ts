@@ -1,12 +1,14 @@
 import { createAction } from '@ngrx/store';
 
+import { WeatherInterface } from '../../interfaces/weather-state.interface';
+
 export const UrubiciRequest = createAction(
   '[Urubici] Request'
 );
 
 export const UrubiciSuccess = createAction(
   '[Urubici] Success',
-  (payload: any) => (payload)
+  (payload: WeatherInterface) => (payload)
 );
 
 export const UrubiciFailure = createAction(

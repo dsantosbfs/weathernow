@@ -48,7 +48,33 @@ body {
     grid-template-rows: auto;
     grid-gap: 50px;
     justify-items: stretch;
-    grid-auto-flow: row;
+    grid-auto-flow: auto;
+  }
+
+  .nuuk {
+    order: 1;
+  }
+
+  .urubici {
+    order: 2;
+  }
+
+  .nairobi {
+    order: 3;
+  }
+
+  @media screen and (max-width: 660px) {
+    .nuuk {
+      order: 2;
+    }
+
+    .urubici {
+      order: 1;
+    }
+
+    .nairobi {
+      order: 3;
+    }
   }
 
   ::ng-deep {

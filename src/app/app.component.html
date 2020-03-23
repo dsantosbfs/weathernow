@@ -4,7 +4,7 @@
   </header>
   <section class="page__container">
     <div class="grid-container">
-      <div>
+      <div class="nuuk">
         <lib-card
           title="Nuuk, GL"
           [loading]="nuuk$?.loading"
@@ -13,7 +13,7 @@
           <p>Updated at {{ getFormatedTime(nuuk$.data.updated_at) }} </p>
         </lib-card>
       </div>
-      <div>
+      <div class="urubici">
         <lib-card
           title="Urubici, BR"
           [loading]="urubici$?.loading"
@@ -32,7 +32,7 @@
           <p>Updated at {{ getFormatedTime(urubici$.data.updated_at) }} </p>
         </lib-card>
       </div>
-      <div>
+      <div class="nairobi">
         <lib-card
           title="Nairobi, KE"
           [loading]="nairobi$?.loading"

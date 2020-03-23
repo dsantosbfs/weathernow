@@ -14,7 +14,13 @@ describe('NairobiReducer', () => {
 
   it('should returns the Nairobi success state', () => {
     const params = {
-      test: true
+      temp: 18,
+      feels_like: 18.66,
+      temp_min: 16.11,
+      temp_max: 20,
+      pressure: 1022,
+      humidity: 88,
+      updated_at: 1584997727730,
     };
     const action = fromAction.NairobiSuccess(params);
     const state = fromReducer.reducer(undefined, action);

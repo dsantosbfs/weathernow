@@ -7,10 +7,12 @@ import * as fromNairobi from './nairobi.reducer';
 
 import { environment } from '../../../../environments/environment';
 
+import { WeatherStateInterface } from '../../interfaces/weather-state.interface';
+
 export interface State {
-  nuuk: any;
-  urubici: any;
-  nairobi: any;
+  nuuk: WeatherStateInterface;
+  urubici: WeatherStateInterface;
+  nairobi: WeatherStateInterface;
 }
 
 export function logger(reducer: ActionReducer<State>): any  {
