@@ -58,4 +58,19 @@ describe('CardComponent', () => {
 
     expect(element).toBeTruthy();
   });
+
+  it('should emits retry event', () => {
+    component.error = true;
+
+    component.$retry.subscribe(data => {
+      expect(data).toBe(undefined);
+    });
+
+    fixture.detectChanges();
+
+    const element = fixture.debugElement.query(By.css('.btn')).nativeElement;
+
+    element.click();
+
+  });
 });
