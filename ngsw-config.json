@@ -21,9 +21,6 @@
         "files": [
           "/assets/**",
           "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
-        ],
-        "urls": [
-          "https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap"
         ]
       }
     }
@@ -31,11 +28,11 @@
   "dataGroups": [{
     "name": "api-performance",
     "urls": [
-      "/blood-glucose/**"
+      "/weather/**"
     ],
     "cacheConfig": {
       "maxSize": 10000,
-      "maxAge": "1h",
+      "maxAge": "10m",
       "strategy": "performance"
     }
   }]
