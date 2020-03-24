@@ -1,11 +1,10 @@
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { Store } from 'ngrx-typed-actions';
 import { StoreModule } from '@ngrx/store';
 import { TestBed, async, inject } from '@angular/core/testing';
 
-import { environment } from '../../../environments/environment';
 import { WeatherService } from './weather.service';
+import { environment } from '../../../environments/environment';
 
 describe('WeatherService', () => {
   const baseUrl = environment.apiUrl;

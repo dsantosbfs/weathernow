@@ -9,12 +9,12 @@ import { WeatherStateInterface } from '../../interfaces/weather-state.interface'
 
 export const initialState: WeatherStateInterface = {
   data: {
-    temp: 0,
     feels_like: 0,
-    temp_min: 0,
-    temp_max: 0,
-    pressure: 0,
     humidity: 0,
+    pressure: 0,
+    temp: 0,
+    temp_max: 0,
+    temp_min: 0,
     updated_at: 0,
   },
   error: null,
@@ -23,6 +23,10 @@ export const initialState: WeatherStateInterface = {
 
 export const reducer = createReducer(
   initialState,
+  on(UrubiciFailure, (state, payload) => ({
+    ...initialState,
+    error: payload,
+  })),
   on(UrubiciRequest, (state, payload) => ({
     ...initialState,
     loading: true
@@ -30,9 +34,5 @@ export const reducer = createReducer(
   on(UrubiciSuccess, (state, payload) => ({
     ...initialState,
     data: payload,
-  })),
-  on(UrubiciFailure, (state, payload) => ({
-    ...initialState,
-    error: payload,
   }))
 );

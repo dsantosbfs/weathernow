@@ -1,7 +1,7 @@
 import {
+  NairobiFailure,
   NairobiRequest,
   NairobiSuccess,
-  NairobiFailure,
 } from './nairobi.actions';
 
 describe('NairobiActions', () => {
@@ -15,12 +15,12 @@ describe('NairobiActions', () => {
 
   it('should create NairobiSuccess action', () => {
     const payload = {
-      temp: 0,
       feels_like: 0,
-      temp_min: 0,
-      temp_max: 0,
-      pressure: 0,
       humidity: 0,
+      pressure: 0,
+      temp: 0,
+      temp_max: 0,
+      temp_min: 0,
       updated_at: 0,
     };
     const action = NairobiSuccess(payload);

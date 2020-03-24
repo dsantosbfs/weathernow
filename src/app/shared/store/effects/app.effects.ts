@@ -27,6 +27,14 @@ export class AppEffects {
     ])
   );
 
+  @Effect() NairobiRequest$ = this.actions$.pipe(
+    ofType(NairobiRequest),
+    switchMap(() => this.service.getNairobiWeather().pipe(
+      map(payload => NairobiSuccess(payload)),
+      catchError(data => of(NairobiFailure(data)))
+    ))
+  );
+
   @Effect() NuukRequest$ = this.actions$.pipe(
     ofType(NuukRequest),
     switchMap(() => this.service.getNuukWeather().pipe(
@@ -40,14 +48,6 @@ export class AppEffects {
     switchMap(() => this.service.getUrubiciWeather().pipe(
       map(payload => UrubiciSuccess(payload)),
       catchError(data => of(UrubiciFailure(data)))
-    ))
-  );
-
-  @Effect() NairobiRequest$ = this.actions$.pipe(
-    ofType(NairobiRequest),
-    switchMap(() => this.service.getNairobiWeather().pipe(
-      map(payload => NairobiSuccess(payload)),
-      catchError(data => of(NairobiFailure(data)))
     ))
   );
 }

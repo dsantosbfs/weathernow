@@ -1,7 +1,7 @@
 import {
+  NuukFailure,
   NuukRequest,
   NuukSuccess,
-  NuukFailure,
 } from './nuuk.actions';
 
 describe('NuukActions', () => {
@@ -15,12 +15,12 @@ describe('NuukActions', () => {
 
   it('should create NuukSuccess action', () => {
     const payload = {
-      temp: 0,
       feels_like: 0,
-      temp_min: 0,
-      temp_max: 0,
-      pressure: 0,
       humidity: 0,
+      pressure: 0,
+      temp: 0,
+      temp_max: 0,
+      temp_min: 0,
       updated_at: 0,
     };
     const action = NuukSuccess(payload);

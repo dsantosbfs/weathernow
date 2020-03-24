@@ -1,12 +1,12 @@
-import { NairobiRequest } from './shared/store/actions/nairobi.actions';
-import { UrubiciRequest } from './shared/store/actions/urubici.actions';
-import { NuukRequest } from './shared/store/actions/nuuk.actions';
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
+import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
 import { AppContainerComponent } from './app.container';
 import { CardModule, DataLabelModule } from 'weather-lib/';
-import { StoreModule } from '@ngrx/store';
+import { NairobiRequest } from './shared/store/actions/nairobi.actions';
+import { NuukRequest } from './shared/store/actions/nuuk.actions';
+import { UrubiciRequest } from './shared/store/actions/urubici.actions';
 
 describe('AppComponent', () => {
   let component: AppContainerComponent;

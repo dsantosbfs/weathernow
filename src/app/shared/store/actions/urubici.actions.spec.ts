@@ -1,7 +1,7 @@
 import {
+  UrubiciFailure,
   UrubiciRequest,
   UrubiciSuccess,
-  UrubiciFailure,
 } from './urubici.actions';
 
 describe('UrubiciActions', () => {
@@ -15,12 +15,12 @@ describe('UrubiciActions', () => {
 
   it('should create UrubiciSuccess action', () => {
     const payload = {
-      temp: 0,
       feels_like: 0,
-      temp_min: 0,
-      temp_max: 0,
-      pressure: 0,
       humidity: 0,
+      pressure: 0,
+      temp: 0,
+      temp_max: 0,
+      temp_min: 0,
       updated_at: 0,
     };
     const action = UrubiciSuccess(payload);

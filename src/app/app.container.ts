@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Select } from 'ngrx-typed-actions';
 import { Observable } from 'rxjs';
+import { Select } from 'ngrx-typed-actions';
 import { Store } from '@ngrx/store';
 
 import { NairobiRequest } from './shared/store/actions/nairobi.actions';
