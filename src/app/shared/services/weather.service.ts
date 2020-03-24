@@ -31,7 +31,7 @@ export class WeatherService extends BaseService {
 
   public getUrubiciWeather(): Observable<WeatherInterface> {
     return this.get(`${this.url()}`, {
-      // q: 'Urubici,BR',
+      q: 'Urubici,BR',
       units: 'metric'
     }).pipe(
       map(data => this.temperatureTransform(data.main))
