@@ -37,7 +37,7 @@ export class AppContainerComponent implements OnInit {
     }, 600000); // 10 min
   }
 
-  private updateWeather() {
+  public updateWeather() {
     this.store.dispatch(WeatherLoad());
   }
 
