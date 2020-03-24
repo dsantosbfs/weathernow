@@ -1,5 +1,5 @@
-import * as fromReducer from './urubici.reducer';
 import * as fromAction from '../actions/urubici.actions';
+import * as fromReducer from './urubici.reducer';
 
 describe('UrubiciReducer', () => {
   it('should returns the Urubici request state', () => {
@@ -14,12 +14,12 @@ describe('UrubiciReducer', () => {
 
   it('should returns the Urubici success state', () => {
     const params = {
-      temp: 18,
       feels_like: 18.66,
-      temp_min: 16.11,
-      temp_max: 20,
-      pressure: 1022,
       humidity: 88,
+      pressure: 1022,
+      temp: 18,
+      temp_max: 20,
+      temp_min: 16.11,
       updated_at: 1584997727730,
     };
     const action = fromAction.UrubiciSuccess(params);
