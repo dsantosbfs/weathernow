@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import * as dayjs from 'dayjs';
 
 @Component({
@@ -11,7 +11,13 @@ export class AppComponent {
   @Input() nuuk$;
   @Input() urubici$;
 
+  @Output() $retry: EventEmitter<any> = new EventEmitter();
+
   public getFormatedTime(time): string {
     return dayjs(time).format('h:mm:ss A');
+  }
+
+  public onRetry(cityCode): void {
+    this.$retry.emit(cityCode);
   }
 }

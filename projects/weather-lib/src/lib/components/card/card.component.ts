@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'lib-card',
@@ -11,6 +11,8 @@ export class CardComponent {
   @Input() temperature: number;
   @Input() title: string;
 
+  @Output() $retry: EventEmitter<any> = new EventEmitter();
+
   get temperatureColor(): string {
     if (this.temperature > 25) {
       return 'high-temperature';
@@ -19,5 +21,9 @@ export class CardComponent {
     if (this.temperature < 5) {
       return 'low-temperature';
     }
+  }
+
+  public retry(): void {
+    this.$retry.emit();
   }
 }

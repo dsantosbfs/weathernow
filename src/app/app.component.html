@@ -10,6 +10,7 @@
           [loading]="nuuk$.loading"
           [temperature]="nuuk$.data.temp"
           [error]="nuuk$.error"
+          ($retry)="onRetry('Nuuk')"
         >
           <p>Updated at {{ getFormatedTime(nuuk$.data.updated_at) }} </p>
         </lib-card>
@@ -20,6 +21,7 @@
           [loading]="urubici$.loading"
           [temperature]="urubici$.data.temp"
           [error]="urubici$.error"
+          ($retry)="onRetry('Urubici')"
         >
           <div>
             <lib-data-label
@@ -40,6 +42,7 @@
           [loading]="nairobi$.loading"
           [temperature]="nairobi$.data.temp"
           [error]="nairobi$.error"
+          ($retry)="onRetry('Nairobi')"
         >
           <p>Updated at {{ getFormatedTime(nairobi$.data.updated_at) }} </p>
         </lib-card>
