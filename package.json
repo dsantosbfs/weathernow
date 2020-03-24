@@ -13,7 +13,6 @@
     "ng": "ng",
     "pack:lib": "cd dist/weather-lib && npm pack",
     "start": "ng serve",
-    "start:mock": "ng serve --configuration=mock",
     "storybook": "start-storybook -s ./src/assets -p 9000",
     "test": "ng test --code-coverage --watch=false --sourceMap=true  --browsers=ChromeHeadless",
     "test:app": "ng test weather-now --code-coverage --sourceMap=true",
