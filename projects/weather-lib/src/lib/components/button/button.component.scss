@@ -1,0 +1,27 @@
+@import '../../shared/scss/main';
+
+.btn {
+  height: 30px;
+  padding: 0 15px;
+  transition: background-color, color .5s;
+  border: 2px solid $wn--color-grey-50;
+  border-radius: $wn--border-radius-big;
+  outline: none;
+  background-color: transparent;
+  color: $wn--color-grey-50;
+  will-change: background-color, border-color, color;
+
+  &:hover {
+    background-color: $wn--color-grey-30;
+  }
+
+  &:active {
+    background-color: $wn--color-grey-40;
+    color: $wn--color-black;
+  }
+
+  &:disabled {
+    border-color: $wn--color-grey-40;
+    background-color: $wn--color-grey-40;
+  }
+}

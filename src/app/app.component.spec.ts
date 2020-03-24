@@ -1,31 +1,44 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
+
 import { AppComponent } from './app.component';
+import { CardModule, DataLabelModule } from 'weather-lib/';
+import { StoreModule } from '@ngrx/store';
 
 describe('AppComponent', () => {
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        CardModule,
+        DataLabelModule,
+        StoreModule.forRoot([]),
+      ],
       declarations: [
         AppComponent
       ],
     }).compileComponents();
+
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.debugElement.componentInstance;
   }));
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
+    expect(component).toBeTruthy();
   });
 
-  it(`should have as title 'weather-now'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('weather-now');
+  it('should gets formatted time', () => {
+    const time = component.getFormatedTime(1585062440840);
+
+    expect(time).toEqual('12:07:20 PM');
   });
 
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to weather-now!');
+  it('should emits retry event', () => {
+    component.$retry.subscribe(data => {
+      expect(data).toBe('test');
+    });
+
+    component.onRetry('test');
   });
 });

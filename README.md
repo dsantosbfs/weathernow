@@ -1,27 +1,55 @@
 # WeatherNow
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
+Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
+Neste projeto você encontrará o aplicativo de tempo no diretório /src/app
+e a lib de componentes no diretório /projects/weather-lib
 
-## Development server
+## Scripts
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+  build:dev: Build da aplicação para ambiente de desenvolvimento
+  build:lib: Build da lib de componentes
+  build:prod: Build da aplicação para ambiente de produção
+  build:storybook: Build do Storybook
+  e2e: Testes de integração (Não implementados)
+  lint: Validação de linters na aplicação e na lib de componentes
+  lint:fix: Corrige automaticamente alguns problemas de lint
+  lint:sass: Validação de lint para Scss
+  ng: Alias para o comando ng do Angular Cli
+  pack:lib: Cria o package da lib de componentes
+  start: Inicia o servidor local
+  storybook: Inicia o storybook
+  test: Roda a suite de testes unitários da aplicação e da lib de componentes
+  test:app: Roda a suite de testes unitários para a aplicação
+  test:lib: Roda a suite de teste unitários para a lib de componentes
+  update:lib: Atualiza o pacote da lib de componentes na aplicação
 
-## Code scaffolding
+## Pré requisitos
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Você precisa ter os seguintes itens instalados em sua maquina para rodar este projeto
 
-## Build
+  Angular Cli: https://cli.angular.io/
+  npm: https://www.npmjs.com/
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Configurando a API do Open Weather
 
-## Running unit tests
+Será necessário incluir a api key do Open Weather https://openweathermap.org/api nos environments da aplicação, para isso edite os arquivos no diretório /src/environments/environment.prod.ts e /src/environments/environment.ts adicionando a sua api key como demonstrado na linha abaixo:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    export const environment = {
+      apiUrl: 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5',
+      clientId: 'YOUR_OPEN_WEATHER_API_KEY,
+      production: false,
+    };
 
-## Running end-to-end tests
+## Instalando dependências
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Acesse a raiz do projeto e rode o comando `npm i`, após o termino da instalação rode o comando `npm run update:lib`.
+Assim que os comandos acima forem devidamente implementados basta rodar o comando `npm run start` e acessar a url http://localhost:4200 para visualizar a aplicação
 
-## Further help
+## Cache da aplicação
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Para testar o cache da aplicação será necessário rodar o build de produção com o comando `npm run build:prod` acessar o diretório /dist/weathernow. Dentro desse diretório rodar o comando `npx https-server`.
+Como o cache foi implementado via service worker, é necessário acessar a aplicação por https para que o SW seja iniciado e configurado no browser.
+
+## Ajuda
+
+Qualquer dúvida estou a disposição para auxiliar nas etapas de configuração de build do projeto. dsantosbfs@gmail.com

@@ -1,0 +1,28 @@
+<section
+  class="card"
+  [ngClass]="[(loading ? 'loading': ''), (error ? 'error': '')]">
+  <header class="card__header">
+    <h2>{{ title }}</h2>
+  </header>
+  <div class="card__content">
+    <p
+      *ngIf="!error"
+      [ngClass]="temperatureColor">
+      {{ temperature }}
+      <small>&deg;</small>
+    </p>
+    <div
+      *ngIf="error"
+      class="card__error">
+      <p>Something went wrong</p>
+      <lib-button
+        label="Try Again"
+        ($click)="retry()"
+      >
+      </lib-button>
+    </div>
+  </div>
+  <footer class="card__footer">
+    <ng-content></ng-content>
+  </footer>
+</section>

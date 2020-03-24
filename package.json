@@ -1,13 +1,29 @@
 {
   "name": "weather-now",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
+    "build:dev": "ng build --prod  --configuration=dev",
+    "build:lib": "ng build weather-lib",
+    "build:prod": "npm i && npm run update:lib && ng build --prod --aot --build-optimizer --progress --verbose",
+    "build:storybook": "build-storybook -c .storybook -o dist/storybook",
+    "e2e": "ng e2e",
+    "lint": "ng lint weather-now && ng lint weather-lib",
+    "lint:fix": "ng lint weather-now --fix && sass-lint-auto-fix",
+    "lint:sass": "sass-lint -v -q",
     "ng": "ng",
+    "pack:lib": "cd dist/weather-lib && npm pack",
     "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "storybook": "start-storybook -s ./src/assets -p 9000",
+    "test": "ng test --code-coverage --watch=false --sourceMap=true  --browsers=ChromeHeadless",
+    "test:app": "ng test weather-now --code-coverage --sourceMap=true",
+    "test:lib": "ng test weather-lib --code-coverage --sourceMap=true",
+    "update:lib": "npm run build:lib && npm run pack:lib && npm i --save-optional dist/weather-lib/weather-lib-0.0.1.tgz"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run lint:sass",
+      "pre-push": "npm run test"
+    }
   },
   "private": true,
   "dependencies": {
@@ -18,30 +34,55 @@
     "@angular/forms": "~8.1.2",
     "@angular/platform-browser": "~8.1.2",
     "@angular/platform-browser-dynamic": "~8.1.2",
+    "@angular/pwa": "^0.801.2",
     "@angular/router": "~8.1.2",
+    "@angular/service-worker": "~8.1.2",
+    "@ngrx/effects": "^8.1.0",
+    "@ngrx/router-store": "^8.1.0",
+    "@ngrx/store": "^8.1.0",
+    "@ngrx/store-devtools": "^8.1.0",
+    "dayjs": "^1.8.23",
+    "ngrx-store-logger": "^0.2.3",
+    "ngrx-typed-actions": "^7.0.9",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.801.2",
+    "@angular-devkit/build-angular": "^0.803.24",
+    "@angular-devkit/build-ng-packagr": "~0.801.3",
     "@angular/cli": "~8.1.2",
     "@angular/compiler-cli": "~8.1.2",
     "@angular/language-service": "~8.1.2",
-    "@types/node": "~8.9.4",
+    "@storybook/addon-a11y": "^5.1.9",
+    "@storybook/addon-centered": "^5.1.10",
+    "@storybook/addon-knobs": "^5.1.9",
+    "@storybook/addon-notes": "^5.1.9",
+    "@storybook/addon-viewport": "^5.1.9",
+    "@storybook/angular": "^5.1.9",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
+    "husky": "^3.0.2",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
-    "karma": "~4.1.0",
+    "karma": "^4.4.1",
     "karma-chrome-launcher": "~2.2.0",
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
+    "lint-staged": "^9.2.0",
+    "ng-packagr": "^5.1.0",
     "protractor": "~5.4.0",
+    "sass-lint": "^1.13.1",
+    "sass-lint-auto-fix": "0.17.0",
     "ts-node": "~7.0.0",
+    "tsickle": "^0.35.0",
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
+  },
+  "optionalDependencies": {
+    "weather-lib": "file:dist/weather-lib/weather-lib-0.0.1.tgz"
   }
 }
