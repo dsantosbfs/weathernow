@@ -73,7 +73,7 @@
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
     "lint-staged": "^9.2.0",
-    "ng-packagr": "^5.1.0",
+    "ng-packagr": "^10.1.1",
     "protractor": "~5.4.0",
     "sass-lint": "^1.13.1",
     "sass-lint-auto-fix": "0.17.0",
